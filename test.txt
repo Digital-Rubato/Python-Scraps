@@ -1,0 +1,4 @@
+from sys import argv
+
+filename = argv
+print("Filename: ", filename)

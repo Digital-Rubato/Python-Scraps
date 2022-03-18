@@ -1,0 +1,32 @@
+#simple one-shot window
+
+import PySimpleGUI as sg
+
+layout = [[sg.Text('My one-shot window.')],
+		[sg.InputText()],
+		# this can also be specifically pointed to with a 'key': [sg.InputText(key='-IN-')]
+		[sg.Submit(), sg.Cancel()]]
+
+window = sg.Window('Window Title', layout)
+
+event, values = window.read()
+window.close()
+
+text_input = values[0]
+#specific key will then need to be changed to text_input = values['-IN-'] to read the sg.InputText(key='-IN')]
+
+
+#this if statement was a try at "error catching"
+#it works, want to know how to redisplay the orginal window
+if text_input == '':
+	print("nope")
+	sg.popup("You have entered nothing")
+	'''
+	#can't use this: error message is: You are attempting to reuse an element in your layout! Once placed in a layout, an element cannot be used in another layout. *** warnings.warn(
+	#Pshell then returns to input
+	sg.Window('Returned Window', layout)
+	#tried with variable 'window' does nothing with it
+	'''
+	
+else:
+	sg.popup('You entered:', text_input)

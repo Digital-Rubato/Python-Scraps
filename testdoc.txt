@@ -1,0 +1,31 @@
+a = -1
+b = -5
+d = 0
+f = 0
+if a == b:
+	print(a)
+elif a > b:
+	print(sum(range(a, b+1)))
+elif a < b:
+	print(sum(range(a+1, b)))
+'''
+for c in range(a+1):
+	d += c
+print(f"d is: {d}")
+for e in range(b+1):
+	f += e
+
+print(f"f is: {f}")
+print(f + d)
+'''
+'''
+given two integers a and b
+
+which can be positive or negative, 
+
+find the sum of all the integers between and including them 
+
+and return it.
+
+if the two numbers are equal return a or b
+'''
