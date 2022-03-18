@@ -1,0 +1,34 @@
+
+'''
+# creating barcodes and exporting to SVG
+#
+import barcode
+
+EAN = barcode.get_barcode_class('code39')
+ean = EAN('M013578')
+fullname = ean.save('ean13_barcode')
+'''
+# Using the PNG Method
+
+import barcode
+#must import barcode to 'use' barcode
+
+from barcode.writer import ImageWriter
+
+this_bc = 'M015345'
+print('recieved input: ',this_bc)
+#WHY IS THERE A W ON OUTPUT?????????
+#NOW ITS A '/'???????
+
+#this does not work. It is trying to source barcode.get_barcode_class('code39')
+#C39(this_bc, writer = ImageWriter())
+#so we add it
+
+EAN= barcode.get_barcode_class('code39')
+print('input class recieved, proceeding')
+
+ean = EAN(this_bc, writer=ImageWriter())
+print('compiling and saving as PNG')
+
+fullname = ean.save('c39_barcode')
+print('Barcode complete!')

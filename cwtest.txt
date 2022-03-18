@@ -1,0 +1,24 @@
+n = 35231
+x = map(str, n)
+print(x)
+'''
+str_n = str(35231)
+rev = []
+out = []
+
+for i in range(len(str_n),0,-1):
+	rev.append(str_n[i-1])
+
+out = list( map(int, rev))
+
+def digitiz(n):
+	one = map(int, str(n)[::-1])
+	print(one)
+for sep in str_n[::-1]:
+	print(sep)
+
+for sep in reversed(str_n):
+	
+
+'''
+
